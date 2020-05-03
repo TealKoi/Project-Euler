@@ -1,5 +1,7 @@
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
+import time
+
 def smallest_multiple(n):
   for i in range(n, factorial(n)+1,n):
     if is_multiple(i,n):
@@ -20,4 +22,10 @@ def factorial(n):
   else:
     return -1
 
-print(smallest_multiple(20))
+def main():
+  print(smallest_multiple(20))
+
+if __name__ == "__main__":
+  start = time.perf_counter()
+  main()
+  print("Program executed in ",round(float(time.perf_counter()-start),2)," second(s)")
