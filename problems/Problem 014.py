@@ -15,26 +15,21 @@
 
 import time
 
-sequenceList = []
+sequenceList = {}
 
 def sequencer(n):
   global sequenceList
-
   count = 1
   while n != 1:
     if(n%2 == 0):
       n = int(n/2)
     else:
       n = int((3*n)+1)
-    if(n <= len(sequenceList)):
-      count += sequenceList[n-1]
-      return count
     count += 1
   return count
 
 def main(n=1000000):
   maxV = 0
-
   for i in range(1,n+1):
     t = sequencer(i)
     if(t>maxV):
