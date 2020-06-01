@@ -26,6 +26,6 @@ def main():
   print(smallest_multiple(20))
 
 if __name__ == "__main__":
-  start = time.perf_counter()
+  start_time = time.perf_counter()
   main()
-  print("Program executed in ",round(float(time.perf_counter()-start),2)," second(s)")
+  print("Program executed in {r:1.4f} second(s)".format(r=time.perf_counter()-start_time))
