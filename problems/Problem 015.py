@@ -3,21 +3,15 @@
 #How many such routes are there through a 20×20 grid?
 
 import time
+from math import factorial
 
 def find_paths(n):
-  grid_size = n
-  path_count = 0
-
-  for i in range(0,grid_size+1):
-    for j in range(i,grid_size+1):
-      print(i,j)
-      path_count += 1
-
-  return path_count
+  r = n
+  n = n*2
+  return factorial(n)/(factorial(r)*factorial(n-r))
 
 def main():
-  for i in range(1,5):
-    print(find_paths(i))
+    print(int(find_paths(20)))
 
 if __name__ == "__main__":
   start_time = time.perf_counter()
